@@ -1,4 +1,4 @@
-// ---------- TIME ----------
+// ---------- time ----------
 
 // time stamp to formatTime
 function formatTimeStamp(timeStamp, dateDelimiter = '-') {
@@ -25,13 +25,46 @@ function fillZero(time) {
   return time;
 }
 
-// Judge leap year
+// judge leap year
 function isLeapYear(year) {
   if (year % 4 === 0 && year % 100 !== 0) {
     return true;
   } else return year % 400 === 0;
 }
 
+// ---------- judge is a number/string ----------
 
+function isNumber(val) {
+  return typeof val === 'number';
+}
 
-// ---------- JUDGE TYPE ----------
+function isString(val) {
+  return typeof val === 'string';
+}
+
+// ---------- clear object data ----------
+
+function clearData(data, boolean = false) {
+  for (let x in data) {
+    let type = typeof data[x];
+    switch (type) {
+      case 'number':
+        data[x] = 0;
+        break;
+      case 'string':
+        data[x] = '';
+        break;
+      case 'boolean':
+        data[x] = boolean;
+        break;
+      case 'object':
+        if (Array.isArray(data[x])) {
+          data[x] = [];
+        } else {
+          data[x] = {};
+        }
+        break;
+    }
+  }
+  return data;
+}
