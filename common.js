@@ -32,6 +32,7 @@ function isLeapYear(year) {
   } else return year % 400 === 0;
 }
 
+
 // ---------- judge is a number/string ----------
 
 function isNumber(val) {
@@ -41,6 +42,16 @@ function isNumber(val) {
 function isString(val) {
   return typeof val === 'string';
 }
+
+
+// ---------- judge class ----------
+
+function classof(val) {
+  if (val === null) return "Null";
+  if (val === undefined) return "Undefined";
+  return Object.prototype.toString.call(val).slice(8, -1);
+}
+
 
 // ---------- clear object data ----------
 
