@@ -47,11 +47,8 @@ function isString(val) {
 // ---------- judge class ----------
 
 function classof(val) {
-  if (val === null) return "Null";
-  if (val === undefined) return "Undefined";
   return Object.prototype.toString.call(val).slice(8, -1);
 }
-
 
 // ---------- clear object data ----------
 
