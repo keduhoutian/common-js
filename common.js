@@ -1,4 +1,14 @@
-// ---------- time ----------
+
+// ---------- Number ----------
+
+// get random number (from ... to ...)
+function getRandomNumber(start, end) {
+  let num = end - start;
+  return Math.round(Math.random()*num + start);
+}
+
+
+// ---------- Time ----------
 
 // time stamp to formatTime
 function formatTimeStamp(timeStamp, dateDelimiter = '-') {
@@ -25,7 +35,7 @@ function fillZero(time) {
   return time;
 }
 
-// judge leap year
+// judge is the leap year
 function isLeapYear(year) {
   if (year % 4 === 0 && year % 100 !== 0) {
     return true;
@@ -33,26 +43,28 @@ function isLeapYear(year) {
 }
 
 
-// ---------- judge is a number/string ----------
+// ---------- Type ----------
 
+// judge the value is a number
 function isNumber(val) {
   return typeof val === 'number';
 }
 
+// judge the value is a string
 function isString(val) {
   return typeof val === 'string';
 }
 
-
-// ---------- judge class ----------
-
+//  judge the type of value
 function classof(val) {
   return Object.prototype.toString.call(val).slice(8, -1);
 }
 
-// ---------- clear object data ----------
 
-function clearData(data, boolean = false) {
+// ---------- Data ----------
+
+// clear form data
+function clearFormData(data, boolean = false) {
   for (let x in data) {
     let type = typeof data[x];
     switch (type) {
