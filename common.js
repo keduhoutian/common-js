@@ -3,8 +3,7 @@
 
 // get random number (from ... to ...)
 function getRandomNumber(start, end) {
-  let num = end - start;
-  return Math.round(Math.random()*num + start);
+  return Math.round(Math.random()*(end - start) + start);
 }
 
 
