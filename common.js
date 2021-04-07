@@ -104,8 +104,8 @@ function clearFormData(data, boolean = false) {
 
 // ---------- Url ----------
 
-//  get the value in the url
-function getUrlValue(url, key) {
+//  get the parameters in the url
+function getUrlParameter(url, key) {
   let reg = new RegExp(key + "=(.+?)(&|$)");
   return url.match(reg)[1];
 }
