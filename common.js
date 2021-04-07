@@ -7,6 +7,7 @@ function getRandomNumber(start, end) {
 }
 
 
+
 // ---------- Time ----------
 
 // time stamp to formatTime
@@ -44,6 +45,7 @@ function isLeapYear(year) {
 }
 
 
+
 // ---------- Type ----------
 
 // judge the value is a number
@@ -60,6 +62,7 @@ function isString(val) {
 function classof(val) {
   return Object.prototype.toString.call(val).slice(8, -1);
 }
+
 
 
 // ---------- Data ----------
@@ -88,4 +91,21 @@ function clearFormData(data, boolean = false) {
     }
   }
   return data;
+}
+
+
+
+// ---------- Verify ----------
+
+// verify phone number
+
+
+
+
+// ---------- Url ----------
+
+//  get the value in the url
+function getUrlValue(url, key) {
+  let reg = new RegExp(key + "=(.+?)(&|$)");
+  return url.match(reg)[1];
 }
