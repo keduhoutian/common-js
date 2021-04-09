@@ -43,7 +43,7 @@ function getRandomNumber(start, end) {
   return Math.round(Math.random()*(end - start) + start);
 }
 
-// calculate the number
+// calculate the number (not user eval())
 function calculate(num1, num2, operator) {
   let f1 = getFloatNumber(num1),
     f2 = getFloatNumber(num2),
