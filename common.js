@@ -1,14 +1,5 @@
 
-// ---------- Number ----------
-
-// get random number (from ... to ...)
-function getRandomNumber(start, end) {
-  return Math.round(Math.random()*(end - start) + start);
-}
-
-
-
-// ---------- Time ----------
+// -------------------- time part --------------------
 
 // time stamp to formatTime
 function formatTimeStamp(timeStamp, dateDelimiter = '-') {
@@ -45,8 +36,41 @@ function isLeapYear(year) {
 }
 
 
+// -------------------- number part --------------------
 
-// ---------- Type ----------
+// get random number (from ... to ...)
+function getRandomNumber(start, end) {
+  return Math.round(Math.random()*(end - start) + start);
+}
+
+// calculate the number
+function calculate(num1, num2, operator) {
+  let f1 = getFloatNumber(num1),
+    f2 = getFloatNumber(num2),
+    allFloatNumber = f1 + f2;
+  num1 = f1 ? num1 * Math.pow(10, f1) : num1;
+  num2 = f2 ? num2 * Math.pow(10, f2) : num2;
+  switch (operator) {
+    case '+':
+      return (Number(num1) + Number(num2)) / Math.pow(10, allFloatNumber);
+    case '-':
+      return (num1 - num2) / Math.pow(10, allFloatNumber);
+    case '*':
+      return (num1 * num2) / Math.pow(10, allFloatNumber);
+    case '/':
+      return (num1 / num2) / Math.pow(10, allFloatNumber);
+  }
+}
+
+// get the float number of number
+function getFloatNumber(num) {
+  let str = num.toString();
+  if (str.indexOf('.') > -1) return str.substring(str.indexOf('.') + 1).length;
+  return 0;
+}
+
+
+// -------------------- type part --------------------
 
 // judge the value is a number
 function isNumber(val) {
@@ -64,8 +88,7 @@ function classof(val) {
 }
 
 
-
-// ---------- Data ----------
+// -------------------- data part --------------------
 
 // clear form data
 function clearFormData(data, boolean = false) {
@@ -94,18 +117,19 @@ function clearFormData(data, boolean = false) {
 }
 
 
+// -------------------- url part --------------------
 
-// ---------- Verify ----------
+// get the parameters in the url
+function getUrlParameter(url, key) {
+  let pattern = new RegExp(key + "=(.+?)(&|$)");
+  return url.match(pattern)[1];
+}
+
+
+// -------------------- verify part --------------------
 
 // verify phone number
-
-
-
-
-// ---------- Url ----------
-
-//  get the parameters in the url
-function getUrlParameter(url, key) {
-  let reg = new RegExp(key + "=(.+?)(&|$)");
-  return url.match(reg)[1];
+function isPhoneNumber(val) {
+  let pattern = /^1[3-9]\d{9}$/;
+  return pattern.test(val)
 }
