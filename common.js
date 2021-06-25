@@ -2,7 +2,7 @@
 // -------------------- time part --------------------
 
 // time stamp to formatTime
-function formatTimeStamp(timeStamp, dateDelimiter = '-') {
+function toFormatTime(timeStamp, dateDelimiter = '-') {
   let d = new Date(timeStamp),
     year = d.getFullYear(),
     month = fillZero(d.getMonth() + 1),
