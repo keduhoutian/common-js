@@ -1,9 +1,9 @@
 
 // -------------------- time part --------------------
 
-// time stamp to formatTime
-function toFormatTime(timeStamp, dateDelimiter = '-') {
-  let d = new Date(timeStamp),
+// timestamp to format time
+function toFormatTime(timestamp, dateDelimiter = '-') {
+  let d = new Date(timestamp),
     year = d.getFullYear(),
     month = fillZero(d.getMonth() + 1),
     day = fillZero(d.getDate()),
@@ -14,8 +14,8 @@ function toFormatTime(timeStamp, dateDelimiter = '-') {
   return year + dateDelimiter + month + dateDelimiter + day + ' ' + hour + ':' + minute + ':' + second;
 }
 
-//  formatTime to time stamp
-function toTimeStamp(formatTime) {
+//  format time to timestamp
+function toTimestamp(formatTime) {
   let d = new Date(formatTime);
   return d.getTime();
 }
